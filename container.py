@@ -25,12 +25,3 @@ class Container(containers.DeclarativeContainer):
         repository=repository,
     )
     test_var = providers.Factory(str, "Hello from DI!")
-
-# #mongo client
-# pymongo_client = pymongo.MongoClient(os.getenv("DBCLIENTURL"))
-
-# #repositories
-# mongo_repository = MongoRepository(pymongo_client)
-
-# #sevices
-# paste_bin_payload_service = pasteBinPayloadService(mongo_repository)

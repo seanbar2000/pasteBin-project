@@ -7,15 +7,9 @@ from container import Container
 from repositories.mongo_repository import MongoRepository
 import services.paste_bin_payload_service as service_modlule
 app = FastAPI()
-@app.get("/todo")
-@inject
-def shorten_url(default_query: str = Depends(Provide[Container.test_var])):
-    print(default_query)      
-    return "test worked"
 
 def start_server():
     print('Starting Server...')       
-    #container.wire(modules=["api_handlers.url_api,handler"])
     uvicorn.run(
         app,
         host="0.0.0.0",
